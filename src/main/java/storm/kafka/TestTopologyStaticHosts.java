@@ -28,7 +28,7 @@ public class TestTopologyStaticHosts {
     public static void main(String[] args) throws Exception {
 
         GlobalPartitionInformation hostsAndPartitions = new GlobalPartitionInformation();
-        hostsAndPartitions.addPartition(0, new Broker("localhost", 9092));
+        hostsAndPartitions.addPartition(0, new HostPort("localhost", 9092));
         BrokerHosts brokerHosts = new StaticHosts(hostsAndPartitions);
 
         SpoutConfig kafkaConfig = new SpoutConfig(brokerHosts, "storm-sentence", "", "storm");
